@@ -63,7 +63,7 @@ export default function SideBar() {
       };
 
       const response = await axios.post(
-        "https://product-app-api.vercel.app//product/filter",
+        "https://product-app-api.vercel.app/product/filter",
         data
       );
       dispatch(getProductFilteredAction(response.data));

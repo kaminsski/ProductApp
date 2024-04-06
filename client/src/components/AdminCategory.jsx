@@ -17,7 +17,7 @@ function AdminCategory() {
   useEffect(() => {
     const fetchBrand = async () => {
       try {
-        const response = await axios.get("https://product-app-api.vercel.app//category/");
+        const response = await axios.get("https://product-app-api.vercel.app/category/");
 
         setCategories(response.data);
       } catch (error) {
@@ -35,7 +35,7 @@ function AdminCategory() {
       e.preventDefault();
 
       const response = await axios.post(
-        "https://product-app-api.vercel.app//category/",
+        "https://product-app-api.vercel.app/category/",
         formData
       );
       setName("");
@@ -50,7 +50,7 @@ function AdminCategory() {
   const handleDeleteCategory = async (id) => {
     try {
       const response = await axios.delete(
-        `https://product-app-api.vercel.app//category/${id}`
+        `https://product-app-api.vercel.app/category/${id}`
       );
       const updatedBrands = categories.filter((brand) => brand._id !== id);
       setCategories(updatedBrands);
@@ -60,7 +60,7 @@ function AdminCategory() {
   };
 
   const handleEditCategory = async (id) => {
-    const response = await axios.get(`https://product-app-api.vercel.app//category/${id}`);
+    const response = await axios.get(`https://product-app-api.vercel.app/category/${id}`);
     const productToEdit = response.data.product;
 
     setEditingCategoryId(id);

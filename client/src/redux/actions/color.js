@@ -1,7 +1,7 @@
 import axios from "axios"
 export const getColorAction = () => async(dispatch) =>{
     try {
-        const data = await axios.get("https://product-app-api.vercel.app//color")
+        const data = await axios.get("https://product-app-api.vercel.app/color")
         dispatch({type:"GET_COLOR", payload: data.data})
     } catch (error) {
         console.log(error);

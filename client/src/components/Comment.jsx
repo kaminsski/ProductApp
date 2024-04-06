@@ -11,7 +11,7 @@ function Comment() {
     const fetchComment = async (productId) => {
       try {
         const response = await axios.get(
-          `https://product-app-api.vercel.app//comment/getCommentByProduct/${productId}`
+          `https://product-app-api.vercel.app/comment/getCommentByProduct/${productId}`
         );
         setComments(response.data);
       } catch (error) {
@@ -27,7 +27,7 @@ function Comment() {
     const user = JSON.parse(localStorage.getItem("auth"));
     const userId = user._id;
     try {
-      const response = await axios.post(`https://product-app-api.vercel.app//comment/`, {
+      const response = await axios.post(`https://product-app-api.vercel.app/comment/`, {
         productId,
         comment,
         userId,

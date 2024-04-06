@@ -36,13 +36,13 @@ function Cart() {
   const increaseQuantitiy = async (id) => {
     try {
       const response = await axios.get(
-        `https://product-app-api.vercel.app//product/productDetail/${id}`
+        `https://product-app-api.vercel.app/product/productDetail/${id}`
       );
       const editProduct = response.data.product;
 
       try {
         const userCartId = await axios.get(
-          `https://product-app-api.vercel.app//cart/${auth._id}`
+          `https://product-app-api.vercel.app/cart/${auth._id}`
         );
 
         const existingOrders = userCartId.data[0].orders;
@@ -75,7 +75,7 @@ function Cart() {
   const decreaseQuantity = async (id) => {
     try {
       const userCartId = await axios.get(
-        `https://product-app-api.vercel.app//cart/${auth._id}`
+        `https://product-app-api.vercel.app/cart/${auth._id}`
       );
 
       const existingOrders = userCartId.data[0].orders;
