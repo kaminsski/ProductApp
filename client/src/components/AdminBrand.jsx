@@ -86,6 +86,7 @@ function AdminBrand() {
 
       <form
         className="bg-white flex flex-col justify-center p-4"
+        encType="multipart/form-data"
         onSubmit={brandSubmit}
       >
         <label htmlFor="name">Brand name</label>
