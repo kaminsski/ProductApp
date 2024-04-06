@@ -1,7 +1,7 @@
 import axios from "axios"
 export const getBrandsAction = () => async(dispatch) =>{
     try {
-        const data = await axios.get("https://product-app-api.vercel.app//brand")
+        const data = await axios.get("https://product-app-api.vercel.app/brand")
         dispatch({type:"GET_BRANDS", payload: data.data})
     } catch (error) {
         console.log(error);
