@@ -17,7 +17,7 @@ function ProductDetail() {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5005/product/productDetail/${productId}`
+          `https://product-app-api.vercel.app//product/productDetail/${productId}`
         );
         setProduct(response.data.product);
       } catch (error) {
@@ -32,7 +32,7 @@ function ProductDetail() {
       try {
         const user = auth && auth._id;
         const isExist = await axios.get(
-          `http://localhost:5005/fav/${productId}`,
+          `https://product-app-api.vercel.app//fav/${productId}`,
           { params: { user } }
         );
         if (isExist.data.length > 0) {
@@ -58,7 +58,7 @@ function ProductDetail() {
 
     try {
       const userCartId = await axios.get(
-        `http://localhost:5005/cart/${auth._id}`
+        `https://product-app-api.vercel.app//cart/${auth._id}`
       );
       const existingOrders = userCartId.data[0].orders;
 
@@ -88,18 +88,18 @@ function ProductDetail() {
     try {
       const user = auth._id;
       const isExist = await axios.get(
-        `http://localhost:5005/fav/${productId}`,
+        `https://product-app-api.vercel.app//fav/${productId}`,
         { params: { user } }
       );
       if (isExist.data.length === 0) {
         const response = await axios.post(
-          `http://localhost:5005/fav/${productId}`,
+          `https://product-app-api.vercel.app//fav/${productId}`,
           { user }
         );
         setFav(true);
       } else {
         const response = await axios.delete(
-          `http://localhost:5005/fav/${isExist.data[0]._id}`
+          `https://product-app-api.vercel.app//fav/${isExist.data[0]._id}`
         );
         setFav(false);
       }

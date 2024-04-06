@@ -20,7 +20,7 @@ function ModalBrand({
       e.preventDefault();
 
       const response = await axios.put(
-        `http://localhost:5005/brand/${editingCategoryId}`,
+        `https://product-app-api.vercel.app//brand/${editingCategoryId}`,
         formData
       );
 

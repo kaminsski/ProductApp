@@ -22,7 +22,7 @@ export default function CategoryCards({ categories }) {
           <div className="categoryWrapper p-2">
             <img
               className="object-cover rounded-xl w-full h-48 md:h-96"
-              src={`http://localhost:5005/${category && category.image}`}
+              src={`https://product-app-api.vercel.app//${category && category.image}`}
               alt={`${category.name}`}
             />
             <p className=" tracking-widest font-link mt-4 uppercase font-bold text-lg sm:text-2xl text-center">

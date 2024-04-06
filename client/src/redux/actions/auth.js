@@ -25,8 +25,8 @@ export const loadDataAction = () => {
 
 export const registerAction = (authData) => async(dispatch) =>{
     try {
-        const response = await axios.post("http://localhost:5005/auth/register", authData);
-        const data = await axios.post("http://localhost:5005/cart",{ user: response.data._id })
+        const response = await axios.post("https://product-app-api.vercel.app//auth/register", authData);
+        const data = await axios.post("https://product-app-api.vercel.app//cart",{ user: response.data._id })
 
         await dispatch({type:"CREATE_CART", payload: data.data});
 
@@ -43,7 +43,7 @@ export const registerAction = (authData) => async(dispatch) =>{
 
 export const loginAction = (authData) => async(dispatch) =>{
     try {
-        const response = await axios.post("http://localhost:5005/auth/login", authData);
+        const response = await axios.post("https://product-app-api.vercel.app//auth/login", authData);
         dispatch({type:"LOGIN", payload: response.data});
         window.location = "/"
 

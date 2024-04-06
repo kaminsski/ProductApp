@@ -46,7 +46,7 @@ export default function Admin() {
 
       if (value.trim() !== "") {
         const response = await axios.get(
-          `http://localhost:5005/product/search/?query=${value}`
+          `https://product-app-api.vercel.app//product/search/?query=${value}`
         );
         setSearchResults(response.data);
       } else {
@@ -75,11 +75,11 @@ export default function Admin() {
   useEffect(() => {
     const fetchBrand = async () => {
       try {
-        const response = await axios.get("http://localhost:5005/brand/");
+        const response = await axios.get("https://product-app-api.vercel.app//brand/");
         const responseCategory = await axios.get(
-          "http://localhost:5005/category/"
+          "https://product-app-api.vercel.app//category/"
         );
-        const responseColor = await axios.get("http://localhost:5005/color/");
+        const responseColor = await axios.get("https://product-app-api.vercel.app//color/");
 
         setBrands(response.data);
         setCategories(responseCategory.data);
@@ -93,7 +93,7 @@ export default function Admin() {
       try {
         const token = localStorage.getItem("jwt");
 
-        const response = await axios.get("http://localhost:5005/product/", {
+        const response = await axios.get("https://product-app-api.vercel.app//product/", {
           headers: {
             Authorization: token,
           },
@@ -118,7 +118,7 @@ export default function Admin() {
     }
     try {
       const response = await axios.post(
-        "http://localhost:5005/product/",
+        "https://product-app-api.vercel.app//product/",
         {
           name,
           price,
@@ -154,7 +154,7 @@ export default function Admin() {
   const handleDeleteProduct = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5005/product/${id}`
+        `https://product-app-api.vercel.app//product/${id}`
       );
       const updatedBrands = products.filter((brand) => brand._id !== id);
       setProducts(updatedBrands);

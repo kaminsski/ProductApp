@@ -1,7 +1,7 @@
 import axios from "axios"
 export const getCategoriesAction = () => async(dispatch) =>{
     try {
-        const data = await axios.get("http://localhost:5005/category")
+        const data = await axios.get("https://product-app-api.vercel.app//category")
         dispatch({type:"GET_CATEGORY", payload: data.data})
     } catch (error) {
         console.log(error);

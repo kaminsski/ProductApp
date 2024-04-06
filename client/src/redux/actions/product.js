@@ -15,7 +15,7 @@ export const loadProductDataAction = () => {
   };
 export const getProductByBrandAction = (id) => async(dispatch) =>{
     try {
-        const data = await axios.get(`http://localhost:5005/product/${id}`)
+        const data = await axios.get(`https://product-app-api.vercel.app//product/${id}`)
         dispatch({type:"BRAND", payload: data.data})
     } catch (error) {
         console.log(error);
@@ -24,7 +24,7 @@ export const getProductByBrandAction = (id) => async(dispatch) =>{
 
 export const getProductByCategoryAction = (id) => async(dispatch) =>{
     try {
-        const data = await axios.get(`http://localhost:5005/product/category/${id}`)
+        const data = await axios.get(`https://product-app-api.vercel.app//product/category/${id}`)
         dispatch({type:"CATEGORY", payload: data.data})
     } catch (error) {
         console.log(error);
@@ -33,7 +33,7 @@ export const getProductByCategoryAction = (id) => async(dispatch) =>{
 
 export const getProductsAction = () => async(dispatch) =>{
     try {
-        const data = await axios.get("http://localhost:5005/product")
+        const data = await axios.get("https://product-app-api.vercel.app//product")
         dispatch({type:"GET_PRODUCTS", payload: data.data})
     } catch (error) {
         console.log(error);
@@ -42,7 +42,7 @@ export const getProductsAction = () => async(dispatch) =>{
 
 export const getNewProductsAction = () => async(dispatch) =>{
     try {
-        const data = await axios.get("http://localhost:5005/product/newProduct")
+        const data = await axios.get("https://product-app-api.vercel.app//product/newProduct")
         dispatch({type:"NEW_PRODUCTS", payload: data.data})
     } catch (error) {
         console.log(error);

@@ -15,7 +15,7 @@ function Search() {
 
       if (value.trim() !== "") {
         const response = await axios.get(
-          `http://localhost:5005/product/search/?query=${value}`
+          `https://product-app-api.vercel.app//product/search/?query=${value}`
         );
         setSearchResults(response.data);
       } else {

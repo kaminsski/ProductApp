@@ -13,7 +13,7 @@ function Fav() {
         if (auth && auth._id) {
           const user = auth._id;
           const response = await axios.get(
-            `http://localhost:5005/fav/userFav/${user}`
+            `https://product-app-api.vercel.app//fav/userFav/${user}`
           );
           setProduct(response.data);
         }

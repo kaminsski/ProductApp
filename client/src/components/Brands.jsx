@@ -23,7 +23,7 @@ export default function Brands({ brands }) {
         >
           <img
             className="block h-[100px] w-[100px] object-cover rounded-full "
-            src={`http://localhost:5005/${item && item.image}`}
+            src={`https://product-app-api.vercel.app//${item && item.image}`}
             alt=""
           />
         </div>
