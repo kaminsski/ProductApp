@@ -28,9 +28,7 @@ function AdminBrand() {
   }, []);
 
   const brandSubmit = async (e) => {
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("image", image);
+    const formData = {name:name, image: image}
     try {
       e.preventDefault();
 
