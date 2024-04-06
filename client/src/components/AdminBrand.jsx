@@ -28,6 +28,7 @@ function AdminBrand() {
   }, []);
 
   const brandSubmit = async (e) => {
+    console.log(image);
     const formData = {name:name, image: image}
     try {
       e.preventDefault();
