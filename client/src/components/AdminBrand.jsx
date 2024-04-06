@@ -34,7 +34,7 @@ function AdminBrand() {
 
       const response = await axios.post(
         "https://product-app-api.vercel.app/brand/",
-        formData
+        {formData}
       );
       setName("");
       setImage("");
